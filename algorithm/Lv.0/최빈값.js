@@ -19,3 +19,18 @@ if (obj.length > 1 && obj[0][1] === obj[1][1]) {
 } else {
   return parseInt(obj[0][0]);
 }
+
+//다른 사람 풀이
+function solution(array) {
+  let m = new Map();
+  for (let n of array) m.set(n, (m.get(n) || 0) + 1);
+  m = [...m].sort((a, b) => b[1] - a[1]);
+  return m.length === 1 || m[0][1] > m[1][1] ? m[0][0] : -1;
+}
+
+function solution(array) {
+  const counts = array.reduce((a, c) => (a[c] ? { ...a, [c]: a[c] + 1 } : { ...a, [c]: 1 }), {});
+  const max = Math.max(...Object.values(counts));
+  const modes = Object.keys(counts).filter((key) => counts[key] === max);
+  return modes.length === 1 ? +modes[0] : -1;
+}
