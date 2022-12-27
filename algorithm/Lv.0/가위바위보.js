@@ -25,7 +25,7 @@ function solution(rsp) {
     return answer;
 }
 
-//다른 사람 문제 풀이 - 객체 사용법
+//다른 사람 문제 풀이 -객체 사용법
 function solution(rsp) {
     let arr = {
         2: 0,
