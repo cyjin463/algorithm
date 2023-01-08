@@ -1,0 +1,23 @@
+/*
+문자열 my_string과 정수 num1, num2가 매개변수로 주어질 때,
+my_string에서 인덱스 num1과 인덱스 num2에 해당하는 문자를 바꾼 문자열을 return 하도록 solution 함수를 완성해보세요.
+*/
+
+function solution(my_string, num1, num2) {
+    let newString = my_string.split("");
+    let num1String = newString[num1];
+    let num2String = newString[num2];
+    newString[num1] = num2String;
+    newString[num2] = num1String;
+    return newString.join("");
+}
+
+//다른 사람 문제 풀이
+
+function solution(my_string, num1, num2) {
+    my_string = my_string.split("");
+    [my_string[num1], my_string[num2]] = [my_string[num2], my_string[num1]];
+    return my_string.join("");
+}
+
+//구조 분해
